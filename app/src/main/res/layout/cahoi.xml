@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,7 +14,6 @@
         android:background="#f7e6c3"
         android:padding="16dp">
 
-        <!-- Hình ảnh -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -23,7 +21,6 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/bothit" />
 
-        <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
             android:id="@+id/txtChuanBi"
             android:layout_width="match_parent"
@@ -33,7 +30,6 @@
             android:text="Chuẩn bị:"
             android:textSize="20sp" />
 
-        <!-- Độ khó & thời gian -->
         <TextView
             android:id="@+id/txtDoKho"
             android:layout_width="match_parent"
@@ -43,7 +39,6 @@
             android:text="Độ khó: Dễ   Thời gian: 20p"
             android:textSize="20sp" />
 
-        <!-- Danh sách nguyên liệu -->
         <TextView
             android:id="@+id/txtNguyenLieu"
             android:layout_width="wrap_content"
@@ -52,7 +47,6 @@
             android:textSize="16sp"
             android:padding="4dp" />
 
-        <!-- Tiêu đề "Bước làm" -->
         <TextView
             android:id="@+id/txtBuoc"
             android:layout_width="match_parent"
@@ -62,7 +56,6 @@
             android:text="Bước làm: "
             android:textSize="20sp" />
 
-        <!-- Các bước làm -->
         <TextView
             android:id="@+id/txtB1"
             android:layout_width="match_parent"
@@ -120,7 +113,17 @@
             android:text="Đặt nửa bánh còn lại lên trên, ấn nhẹ để cố định nhân bên trong. Thưởng thức ngay hoặc ăn kèm salad."
             />
 
-        <!-- Nút Quay lại -->
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+
         <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"

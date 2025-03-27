@@ -11,16 +11,12 @@
         android:background="#f4e4d7"
         android:padding="16dp">
 
-        <!-- Hình ảnh
-         -->
-
         <ImageView
             android:id="@+id/imgRecipe"
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop" />
 
-        <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
             android:id="@+id/txtRecipeTitle"
             android:layout_width="match_parent"
@@ -30,6 +26,7 @@
             android:padding="8dp"
             android:gravity="center"
             android:textColor="#000000" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +35,7 @@
             android:background="#a66a44"
             android:padding="8dp"
             android:textColor="@android:color/white"/>
-        <!-- Độ khó & thời gian -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +59,6 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Danh sách nguyên liệu -->
         <TextView
             android:id="@+id/txtIngredients"
             android:layout_width="match_parent"
@@ -70,7 +66,6 @@
             android:textSize="16sp"
             android:padding="8dp" />
 
-        <!-- Các bước làm -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,7 +83,17 @@
             android:padding="8dp"
             android:background="#d9b9a3"/>
 
-        <!-- Nút quay lại -->
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+
         <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"

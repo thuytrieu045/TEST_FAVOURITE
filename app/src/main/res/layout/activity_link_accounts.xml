@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FDF6EC"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn tài khoản để liên kết"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#914F3B"
+        android:layout_marginBottom="24dp" />
+
+    <!-- ImageView MoMo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgMoMo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_momo"
+            android:contentDescription="MoMo"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MoMo"
+            android:textSize="18sp"
+            android:textColor="#914F3B"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- ImageView ZaloPay -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgZaloPay"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_zalopay"
+            android:contentDescription="ZaloPay"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZaloPay"
+            android:textSize="18sp"
+            android:textColor="#914F3B"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- ImageView Vietcombank -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgVietcombank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_vcb"
+            android:contentDescription="Vietcombank"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vietcombank"
+            android:textSize="18sp"
+            android:textColor="#914F3B"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- ImageView MB Bank -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgMBBank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_mbbank"
+            android:contentDescription="MB Bank"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MB Bank"
+            android:textSize="18sp"
+            android:textColor="#914F3B"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- ImageView VietinBank -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgVietinBank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_viettinbank"
+            android:contentDescription="VietinBank"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VietinBank"
+            android:textSize="18sp"
+            android:textColor="#914F3B"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Nút Quay lại -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quay lại"
+        android:backgroundTint="#914F3B"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

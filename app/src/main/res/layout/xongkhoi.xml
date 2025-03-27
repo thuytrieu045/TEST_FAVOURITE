@@ -117,6 +117,16 @@
             android:padding="8dp"
             android:text="Ép nhẹ bánh để các nguyên liệu hòa quyện, cắt làm đôi và thưởng thức."/>
 
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
         <!-- Nút Quay lại -->
         <Button
             android:id="@+id/btnBack"

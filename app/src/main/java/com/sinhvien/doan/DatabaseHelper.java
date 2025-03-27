@@ -7,14 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    // Tên database và phiên bản
     private static final String TEN_DATABASE = "BakingRecipeApp.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2; // Tăng version để kích hoạt onUpgrade
 
     // Bảng Users
     public static final String BANG_USERS = "users";
     public static final String COT_USER_ID = "user_id";
-    public static final String COT_FIREBASE_UID = "firebase_uid"; // Firebase UID
+    public static final String COT_FIREBASE_UID = "firebase_uid";
 
     // Bảng Recipes
     public static final String BANG_RECIPES = "recipes";
@@ -27,12 +26,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COT_TIME = "time";
     public static final String COT_DOKHO = "difficulty";
 
-    // Tạo bảng Users
+    // Chuỗi tạo bảng Users với các cột thanh toán
     private static final String CREATE_BANG_USERS = "CREATE TABLE " + BANG_USERS + " (" +
             COT_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            COT_FIREBASE_UID + " TEXT UNIQUE NOT NULL)";
+            COT_FIREBASE_UID + " TEXT UNIQUE NOT NULL, " +
+            "momo_number TEXT, " +
+            "zalopay_number TEXT, " +
+            "vietcombank_account TEXT, " +
+            "mbbank_account TEXT, " +
+            "vietinbank_account TEXT)";
 
-    // Tạo bảng Recipes (Thêm khóa ngoại user_id)
     private static final String CREATE_BANG_RECIPES = "CREATE TABLE " + BANG_RECIPES + " (" +
             COT_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             COT_TEN_RECIPE + " TEXT NOT NULL, " +
@@ -43,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COT_CATEGORY + " INTEGER NOT NULL, " +
             COT_TIME + " INTEGER NOT NULL, " +
             COT_DOKHO + " TEXT NOT NULL, " +
-            "FOREIGN KEY(" + COT_USER_ID + ") REFERENCES " + BANG_USERS + "( " + COT_USER_ID + "))";
+            "FOREIGN KEY(" + COT_USER_ID + ") REFERENCES " + BANG_USERS + "(" + COT_USER_ID + "))";
 
     public DatabaseHelper(Context context) {
         super(context, TEN_DATABASE, null, DATABASE_VERSION);
@@ -57,20 +60,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if (oldVersion < 2) {
+            // Thêm các cột mới vào bảng users
+            db.execSQL("ALTER TABLE " + BANG_USERS + " ADD COLUMN momo_number TEXT");
+            db.execSQL("ALTER TABLE " + BANG_USERS + " ADD COLUMN zalopay_number TEXT");
+            db.execSQL("ALTER TABLE " + BANG_USERS + " ADD COLUMN vietcombank_account TEXT");
+            db.execSQL("ALTER TABLE " + BANG_USERS + " ADD COLUMN mbbank_account TEXT");
+            db.execSQL("ALTER TABLE " + BANG_USERS + " ADD COLUMN vietinbank_account TEXT");
+        }
     }
 
-    // Trích hoặc thêm user_id mỗi khi đăng nhập
     public int getUserId(String firebaseUid) {
         SQLiteDatabase db = this.getWritableDatabase();
-        int userId = -1; // Mặc định là -1 nếu không tìm thấy
+        int userId = -1;
 
-        // Kiểm tra nếu user đã tồn tại
         Cursor cursor = db.rawQuery("SELECT user_id FROM users WHERE firebase_uid = ?", new String[]{firebaseUid});
         if (cursor.moveToFirst()) {
             userId = cursor.getInt(0);
         } else {
-            // Thêm user mới vào và lấy user_id
             ContentValues values = new ContentValues();
             values.put("firebase_uid", firebaseUid);
             long newUserId = db.insert("users", null, values);
@@ -80,5 +87,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return userId;
+    }
+
+    public void updatePaymentInfo(int userId, String momo, String zalopay, String vietcombank, String mbbank, String vietinbank) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("momo_number", momo);
+        values.put("zalopay_number", zalopay);
+        values.put("vietcombank_account", vietcombank);
+        values.put("mbbank_account", mbbank);
+        values.put("vietinbank_account", vietinbank);
+        db.update(BANG_USERS, values, COT_USER_ID + " = ?", new String[]{String.valueOf(userId)});
     }
 }

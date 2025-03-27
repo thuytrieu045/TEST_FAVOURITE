@@ -1,5 +1,7 @@
 package com.sinhvien.doan;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +11,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Nhận product_id từ Intent
         String productId = getIntent().getStringExtra("product_id");
 
-        // Chọn layout tương ứng
         if ("1".equals(productId)) {
             setContentView(R.layout.banh_choco);
         } else if ("2".equals(productId)) {
@@ -38,11 +38,18 @@ public class ProductDetailActivity extends AppCompatActivity {
         } else if ("12".equals(productId)) {
             setContentView(R.layout.banhkem_chanh);
         } else {
-            finish(); // Nếu không có product_id hợp lệ, thoát Activity
+            finish();
         }
 
-        // Xử lý nút "Quay lại"
+        Button btnDonate = findViewById(R.id.btnDonate);
         Button btnBack = findViewById(R.id.btnBack);
+
+        btnDonate.setOnClickListener(v -> {
+            String paymentLink = "https://mbbank.com.vn/0906780284"; // Tài khoản admin
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(paymentLink));
+            startActivity(browserIntent);
+        });
+
         btnBack.setOnClickListener(v -> finish());
     }
 }

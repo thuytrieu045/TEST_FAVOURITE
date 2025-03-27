@@ -176,6 +176,16 @@ Sau khi bánh chín lấy bánh ra khỏi khuôn để cho nguội bớt rồi d
             android:text="Bánh Brownie đạt được kết cấu ẩm đặc mang vị đắng đậm của sô cô la cùng kết hợp với vị béo từ các nguyên liệu khác. Cắn vào một miếng mùi sô cô la đậm đặc tỏa ra khiến các tín đồ của loại nguyên liệu này không thể chối từ." />
 
         <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+        <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

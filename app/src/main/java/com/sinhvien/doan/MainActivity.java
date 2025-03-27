@@ -4,20 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
-
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent3 = new Intent(MainActivity.this, Category3Activity.class);
             startActivity(intent3);
         });
+
         // Xử lý sự kiện nhấn nút "View Information"
         Button btnViewInfo = findViewById(R.id.btnViewInformation);
         btnViewInfo.setOnClickListener(v -> {
@@ -58,21 +57,25 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.mnHome) {
+                    Toast.makeText(MainActivity.this, "Đang ở Home", Toast.LENGTH_SHORT).show();
                     return true; // Đang ở trang Home, không cần chuyển
                 } else if (itemId == R.id.mnPost) {
-                    startActivity(new Intent(MainActivity.this, AddRecipeActivity.class)); // Chuyển đến SearchActivity
+                    Toast.makeText(MainActivity.this, "Chuyển sang Post", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, AddRecipeActivity.class));
                     return true;
-                }else if (itemId == R.id.mnSearch) {
-                    startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
+                } else if (itemId == R.id.mnSearch) {
+                    Toast.makeText(MainActivity.this, "Chuyển sang Search", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, SearchActivity.class));
                     return true;
                 } else if (itemId == R.id.mnAccount) {
-                    startActivity(new Intent(MainActivity.this, AccountActivity.class)); //Chuyển đến AccountActivity
+                    Toast.makeText(MainActivity.this, "Chuyển sang Profile", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, AccountActivity.class));
                     return true;
                 }
                 return false;
             }
-
         });
+
         // Xử lý tự động căn lề phù hợp với hệ thống
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
