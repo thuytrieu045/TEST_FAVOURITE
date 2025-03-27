@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDF6EC"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".SearchActivity">
@@ -11,39 +13,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <!-- Nút Quay lại -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBackToHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quay lại"
-            android:padding="10dp"
-            android:backgroundTint="#D58D57"
-            android:textColor="#FFFFFF"
-            android:layout_marginLeft="8dp"/>
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/Nau_sua"
+            app:cornerRadius="50dp"
+            android:layout_marginRight="8dp"/>
 
         <!-- Thanh tìm kiếm -->
-        <EditText
-            android:id="@+id/search_bar"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Nhập tên bánh cần tìm..."
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:drawableLeft="@android:drawable/ic_search_category_default"/>
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@android:color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập tên bánh cần tìm..."
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Nút lọc bài đăng -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFilter"
             android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
+            android:layout_height="wrap_content"
             android:text="All"
-            android:textSize="10dp"
-            app:cornerRadius="15dp" />
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/Nau_sua"
+            app:cornerRadius="50dp"
+            android:layout_marginLeft="8dp"/>
     </LinearLayout>
 
     <!-- Danh sách kết quả tìm kiếm -->
@@ -51,7 +65,8 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
-
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:overScrollMode="always"/>
 </LinearLayout>

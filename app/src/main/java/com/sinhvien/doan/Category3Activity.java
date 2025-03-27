@@ -27,7 +27,7 @@ public class Category3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_category3);
 
         // Xử lý nút "Back"
-        Button button = findViewById(R.id.btnback);
+        Button button = findViewById(R.id.btnBack);
         button.setOnClickListener(v -> finish()); // Trả về MainActivity
 
         // Khởi tạo

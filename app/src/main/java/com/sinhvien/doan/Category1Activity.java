@@ -24,7 +24,7 @@ public class Category1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_category1);
 
         // Nút quay về
-        Button button = findViewById(R.id.btnback);
+        Button button = findViewById(R.id.btnBack);
         button.setOnClickListener(v -> finish());
 
         // Khởi tạo

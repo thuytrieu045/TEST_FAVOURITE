@@ -5,49 +5,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="top"
     android:padding="12dp"
-    >
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#FDF6EC">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        app:cardCornerRadius="20dp"
-        android:background="#FFE4B5"
         android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FFFFFF"
-    android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:id="@+id/ivAvatar"
-            android:src="@drawable/choco"
-            android:scaleType="centerCrop"/>
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical"
-           android:padding="20dp">
-        <TextView
-            android:id="@+id/tvRecipeName"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="Product Name" />
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:cardCornerRadius="16dp">
 
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Description" />
+            <ImageButton
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/ivAvatar"
+                android:src="@drawable/choco"
+                android:scaleType="centerCrop"
+                android:background="@null"
+                android:contentDescription="Recipe Image"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-       </LinearLayout>
-</LinearLayout>
+                <TextView
+                    android:id="@+id/tvRecipeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#914F3B"
+                    android:text="Product Name"/>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#D58D57"
+                    android:text="Description"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

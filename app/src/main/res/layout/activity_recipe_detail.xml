@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_gravity="top"
-    android:padding="12dp"
-    >
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:padding="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
         android:padding="12dp"
-        app:cardCornerRadius="20dp"
-        android:background="#FFE4B5"
-        android:orientation="vertical">
+        android:gravity="center_vertical">
+
+        <!-- Hình ảnh sản phẩm -->
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/choco"
+            android:elevation="4dp"/>
+
+        <!-- Thông tin sản phẩm -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:id="@+id/ivAvatar"
-                android:src="@drawable/choco"
-                android:scaleType="centerCrop"/>
+            android:orientation="vertical"
+            android:paddingStart="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dp">
-                <TextView
-                    android:id="@+id/tvRecipeName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="Product Name" />
+            <TextView
+                android:id="@+id/tvRecipeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#914F3B"
+                android:text="Product Name" />
 
-                <TextView
-                    android:id="@+id/tvDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="Description" />
-
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Description" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

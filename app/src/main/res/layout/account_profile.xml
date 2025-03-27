@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -9,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/profileName"
             android:layout_width="match_parent"
@@ -18,58 +18,78 @@
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
+            <!-- Tiêu đề liên kết tài khoản -->
+            <TextView
+                android:id="@+id/txtLinkAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Liên kết tài khoản thanh toán"
+                android:textColor="@color/Nau_caramel"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileName" />
 
-        <!-- Tiêu đề liên kết tài khoản -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liên kết tài khoản thanh toán"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            <!-- Button Liên kết tài khoản -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLinkAccounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/Nau_sua"
+                android:text="Liên kết tài khoản"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLinkAccount" />
 
-        <!-- Button Liên kết tài khoản -->
-        <Button
-            android:id="@+id/btnLinkAccounts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Liên kết tài khoản"
-            android:backgroundTint="#D58D57"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="8dp" />
+            <!-- Button Lưu thông tin -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSavePayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/Nau_caramel"
+                android:text="Lưu thông tin"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnLinkAccounts" />
 
-        <!-- Nút Lưu thông tin (có thể giữ hoặc xóa tùy nhu cầu) -->
-        <Button
-            android:id="@+id/btnSavePayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lưu thông tin"
-            android:backgroundTint="#914F3B"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="16dp" />
+            <!-- Button Logout -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/Nau_sua"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSavePayment" />
 
-        <!-- Nút Logout và Back -->
-        <Button
-            android:id="@+id/btnSignout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:backgroundTint="#D58D57"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:backgroundTint="#914F3B"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="8dp" />
+            <!-- Button Back -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/Nau_caramel"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSignout" />
 
     </LinearLayout>
 </ScrollView>

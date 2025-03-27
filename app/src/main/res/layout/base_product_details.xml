@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f4e4d7"
+        android:background="#FDF6EC"
         android:padding="16dp">
 
         <ImageView
@@ -32,14 +32,13 @@
             android:layout_height="wrap_content"
             android:text="Chuẩn bị:"
             android:textSize="20sp"
-            android:background="#a66a44"
+            android:background="#914F3B"
             android:padding="8dp"
             android:textColor="@android:color/white"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c79a78"
+            android:background="#D58D57"
             android:orientation="horizontal">
 
             <TextView
@@ -48,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="Độ khó: "
                 android:padding="8dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/txtRecipeTime"
@@ -56,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:text="Thời gian: "
                 android:padding="8dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <TextView
@@ -64,14 +65,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:textColor="#914F3B" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bước làm:"
             android:textSize="20sp"
-            android:background="#a66a44"
+            android:background="#914F3B"
             android:padding="8dp"
             android:textColor="@android:color/white" />
 
@@ -81,8 +83,19 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:padding="8dp"
-            android:background="#d9b9a3"/>
+            android:background="#D9B9A3"
+            android:textColor="#000000" />
 
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D58D57"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"/>
         <Button
             android:id="@+id/btnDonate"
             android:layout_width="match_parent"
@@ -93,16 +106,15 @@
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
-
         <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#914F3B"
+            android:backgroundTint="#914F3B"
             android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
-            android:padding="8dp"
+            android:padding="12dp"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
 </ScrollView>

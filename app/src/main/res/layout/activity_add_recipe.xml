@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FDF6EC">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,13 +12,13 @@
         android:orientation="vertical">
 
         <!-- Nút Quay lại -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBackToHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quay lại"
             android:padding="10dp"
-            android:backgroundTint="#D58D57"
+            android:backgroundTint="@color/Nau_sua"
             android:textColor="#FFFFFF"
             android:layout_marginLeft="8dp"/>
 
@@ -28,10 +29,9 @@
             android:layout_height="wrap_content"
             android:hint="Tên công thức"
             android:inputType="text"
-            android:importantForAccessibility="yes"
             android:textSize="18sp"
             android:padding="8dp"
-            android:background="@android:drawable/edit_text" />
+            android:backgroundTint="@color/Nau_caramel"/>
 
         <!-- Độ khó và thời gian -->
         <EditText
@@ -41,7 +41,7 @@
             android:hint="Độ khó"
             android:inputType="text"
             android:padding="8dp"
-            android:background="@android:drawable/edit_text" />
+            android:backgroundTint="@color/Nau_caramel"/>
 
         <EditText
             android:id="@+id/edtTime"
@@ -49,8 +49,8 @@
             android:layout_height="wrap_content"
             android:hint="Thời gian (phút)"
             android:padding="8dp"
-            android:background="@android:drawable/edit_text"
-            android:inputType="number" />
+            android:backgroundTint="@color/Nau_caramel"
+            android:inputType="number"/>
 
         <!-- Nguyên liệu -->
         <EditText
@@ -66,7 +66,7 @@
             android:overScrollMode="always"
             android:imeOptions="actionDone"
             android:padding="8dp"
-            android:background="@android:drawable/edit_text" />
+            android:backgroundTint="@color/Nau_caramel"/>
 
         <!-- Hướng dẫn -->
         <EditText
@@ -82,28 +82,30 @@
             android:overScrollMode="always"
             android:imeOptions="actionDone"
             android:padding="8dp"
-            android:background="@android:drawable/edit_text" />
+            android:backgroundTint="@color/Nau_caramel"/>
 
         <EditText
             android:id="@+id/edtImageURL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập URL của ảnh"/>
+            android:hint="Nhập URL của ảnh"
+            android:backgroundTint="@color/Nau_caramel"/>
 
         <Spinner
             android:id="@+id/spinnerCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Nau_sua"/>
 
         <!-- Nút đăng bài -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Đăng bài"
             android:padding="12dp"
             android:textSize="18sp"
-            android:backgroundTint="#914F3B"
+            android:backgroundTint="@color/Nau_sua"
             android:textColor="@android:color/white"
             android:layout_marginTop="8dp"/>
     </LinearLayout>

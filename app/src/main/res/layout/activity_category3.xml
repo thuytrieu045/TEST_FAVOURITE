@@ -2,31 +2,39 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
-<LinearLayout
-    android:id="@+id/main_Category2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".Category2Activity">
+    android:fillViewport="true"
+    android:background="#FDF6EC">
 
-
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
+        android:id="@+id/main_Category2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rvList"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnback"
-        android:layout_gravity="center"
-        android:backgroundTint="#914F3B"
-        android:text="Quay lại"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".Category2Activity">
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:overScrollMode="always"/>
+
+        <!-- Nút Quay lại -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quay lại"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/Nau_sua"
+            app:cornerRadius="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
 </ScrollView>
