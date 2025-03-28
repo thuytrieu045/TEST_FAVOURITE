@@ -134,8 +134,11 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void showRecipes(boolean isALl) {
-        if(isALl) {
+        if(isALl && loadRecipes()) {
             recyclerView.setAdapter(new ConcatAdapter(adapter, recipeAdapter));
+        }
+        else if(isALl && !loadRecipes()) {
+            recyclerView.setAdapter(adapter);
         }
         else {
             recyclerView.setAdapter(recipeAdapter);
