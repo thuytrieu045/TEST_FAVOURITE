@@ -48,7 +48,6 @@
         android:padding="12dp" />
 
 </LinearLayout>
-=======
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -113,4 +112,3 @@
 
     </LinearLayout>
 </ScrollView>
->>>>>>> 2b1a157 (Cập nhật các giao diện mới)
