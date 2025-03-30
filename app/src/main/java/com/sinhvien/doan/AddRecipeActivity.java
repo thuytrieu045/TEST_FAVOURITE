@@ -131,7 +131,7 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
 
         //Chuyển sang RecipePostActivity
-        Intent intent = new Intent(AddRecipeActivity.this, RecipePostActivity.class);
+        Intent intent = new Intent(AddRecipeActivity.this, ViewPostActivity.class);
         intent.putExtra("title", name);
         intent.putExtra("difficulty", difficulty);
         intent.putExtra("ingredients", ingredients);

@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +28,7 @@ public class SearchActivity extends AppCompatActivity {
     private List<Recipe> recipesList;
     private RecyclerView recyclerView;
     private MyDataBase myDataBase;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class SearchActivity extends AppCompatActivity {
         loadProducts(); // Gọi hàm để load dữ liệu mẫu
         myDataBase = new MyDataBase(this);
         btnFilter = findViewById(R.id.btnFilter);
+        databaseHelper = new DatabaseHelper(this);
 
         boolean hasRecipePosts = loadRecipes(); // Hàm kiểm tra tồn tại bài đăng công thức
 
@@ -63,6 +68,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.filter(s.toString()); // Gọi hàm lọc từ ProductAdapter
+                if(recipeAdapter != null)
                 recipeAdapter.filter(s.toString()); // Gọi hàm lọc từ RecipeAdapter
             }
 
@@ -83,6 +89,36 @@ public class SearchActivity extends AppCompatActivity {
                 showRecipes(isAll[0]);
             }
             else {
+                if(!recipesList.isEmpty()) {
+                    recipesList.clear();
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        String firebaseUid = user.getUid(); // Lấy Firebase UID
+                        int userId = databaseHelper.getUserId(firebaseUid); // Chuyển sang user_id
+                        if (userId != -1) {
+                            Cursor cursor = myDataBase.getRecipeByUserID(userId);
+                            if (cursor != null && cursor.moveToFirst()) {
+                                do {
+                                    Recipe recipe = new Recipe(
+                                            cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_RECIPE_ID)),
+                                            cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TEN_RECIPE)),
+                                            cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_INGREDIENTS)),
+                                            cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_STEPS)),
+                                            cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_USER_ID)),
+                                            cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_IMG_URL)),
+                                            cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY)),
+                                            cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TIME)),
+                                            cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_DOKHO))
+                                    );
+                                    recipesList.add(recipe);
+                                } while (cursor.moveToNext());
+                                cursor.close();
+                            }
+                            if (recipesList.size() > 0)
+                                recipeAdapter = new RecipeAdapter(this, recipesList);
+                        }
+                    }
+                }
                 btnFilter.setText("My posts");
                 showRecipes(isAll[0]);
             }
@@ -112,6 +148,7 @@ public class SearchActivity extends AppCompatActivity {
 
     // Sử dụng loadRecipes() để tải lên các bài viết đã đăng
     private boolean loadRecipes() {
+        recipesList.clear();
         Cursor cursor = myDataBase.layTatCaDuLieu();
         if(cursor != null && cursor.moveToFirst()) {
             do {
@@ -135,9 +172,10 @@ public class SearchActivity extends AppCompatActivity {
 
     private void showRecipes(boolean isALl) {
         if(isALl && loadRecipes()) {
+            recipeAdapter = new RecipeAdapter(this, recipesList);
             recyclerView.setAdapter(new ConcatAdapter(adapter, recipeAdapter));
         }
-        else if(isALl && !loadRecipes()) {
+        else if(isALl && recipesList.isEmpty()) {
             recyclerView.setAdapter(adapter);
         }
         else {

@@ -3,8 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nh_p_t_n_s_n_ph_m">Nhập tên sản phẩm</string>
-    <string-array
-        name="recipe_categories">
+    <string-array name="recipe_categories">
         <item>Sweet Dessert</item>
         <item>Breakfast</item>
         <item>Birthday Cake</item>

@@ -130,4 +130,27 @@ public class MyDataBase {
         );
 
     }
+
+    public Cursor getRecipeByUserID(int userID) {
+        SQLiteDatabase database = dbHelper.getReadableDatabase();
+        String[] cot = {
+                DatabaseHelper.COT_RECIPE_ID,
+                DatabaseHelper.COT_TEN_RECIPE,
+                DatabaseHelper.COT_INGREDIENTS,
+                DatabaseHelper.COT_STEPS,
+                DatabaseHelper.COT_USER_ID,
+                DatabaseHelper.COT_IMG_URL,
+                DatabaseHelper.COT_CATEGORY,
+                DatabaseHelper.COT_TIME,
+                DatabaseHelper.COT_DOKHO
+        };
+
+        return database.query(
+                DatabaseHelper.BANG_RECIPES,
+                null,
+                DatabaseHelper.COT_USER_ID + " = ?",
+                new String[]{String.valueOf(userID)},
+                null, null, null
+        );
+    }
 }
