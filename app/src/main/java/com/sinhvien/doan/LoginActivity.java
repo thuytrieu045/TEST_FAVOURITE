@@ -1,13 +1,10 @@
 package com.sinhvien.doan;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -101,7 +98,16 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+        txtForgerPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 
     // Kiểm tra độ hợp lý của email
     private boolean isValidEmail(String email) {
