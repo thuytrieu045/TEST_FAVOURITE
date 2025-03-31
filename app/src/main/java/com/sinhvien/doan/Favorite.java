@@ -1,39 +1,19 @@
 package com.sinhvien.doan;
 
-public class Product {
-    //private final String path;
+public class Favorite {
     private String id;
     private String name,imgURL;
     private String description;
     private String avatar;
     private int imageResource; // Thêm biến hình ảnh
-    private String path;
 
-    // Constructor đầy đủ
-    public Product(String id, String name, String description, String avatar, int imageResource) {
+    public Favorite(String id, String name, String description, String avatar, int imageResource) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.avatar = avatar;
         this.imageResource = imageResource;
-
     }
-
-    // Constructor đơn giản hơn
-    public Product(int id, String name, String description, int imageResource) {
-        this.id = String.valueOf(id);
-        this.name = name;
-        this.description = description;
-        this.avatar = ""; // Nếu không có ảnh URL
-        this.imageResource = imageResource;
-    }
-
-    public Product(int id, String name, String description, String avatar, String image) {
-    }
-
-
-    //Constructor tạm thời
-
 
     public String getId() {
         return id;

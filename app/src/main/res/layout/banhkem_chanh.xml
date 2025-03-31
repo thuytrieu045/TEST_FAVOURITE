@@ -127,6 +127,16 @@
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Yêu thích"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
         <!-- Nút Quay lại -->
         <Button
             android:id="@+id/btnBack"

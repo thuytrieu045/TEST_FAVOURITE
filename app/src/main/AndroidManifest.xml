@@ -16,6 +16,8 @@
         <activity android:name=".PaymentLinkActivity" />
         <activity android:name=".LinkAccountsActivity" />
         <activity android:name=".AddRecipeActivity"/>
+        <activity android:name=".Favorite" android:exported="false"
+        tools:ignore="Instantiatable" />
         <activity android:name=".SearchActivity"/>
         <activity android:name=".AccountActivity"/>
         <activity android:name=".SpecialCakeActivity" android:exported="false" />

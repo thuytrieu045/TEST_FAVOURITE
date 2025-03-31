@@ -97,6 +97,16 @@
             android:padding="12dp"
             android:layout_marginTop="8dp"/>
         <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D9B9A3"
+            android:text="Yêu thích"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"/>
+        <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -8,5 +8,6 @@
         <item>Breakfast</item>
         <item>Birthday Cake</item>
     </string-array>
+    <string name="favorite">Yêu thích</string>
 </resources>
 

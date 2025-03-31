@@ -186,6 +186,16 @@ Sau khi bánh chín lấy bánh ra khỏi khuôn để cho nguội bớt rồi d
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
         <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D58D57"
+            android:text="Yêu thích"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+        <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

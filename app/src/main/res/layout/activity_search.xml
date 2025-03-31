@@ -42,9 +42,9 @@
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập tên bánh cần tìm..."
                 android:drawableStart="@android:drawable/ic_menu_search"
-                android:padding="12dp"/>
+                android:hint="Nhập tên bánh cần tìm..."
+                android:padding="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Nút lọc bài đăng -->
